@@ -1,0 +1,52 @@
+# This is a comment
+# Tori Strickland
+# 06/30/2024
+# P3LAB
+# Calculating the most efficient number of dollar, quarters, dimes, nickels and pennies needed to make the given amount of money.
+
+def calculate_change():
+    # Input:
+    money = float(input("Enter the amount of money as a float: $"))
+
+    # Conversion:
+    total_cents = int(money * 100)
+
+    # Calculate dollars
+    dollars = total_cents // 100
+    if dollars == 1:
+        print(f"{dollars} dollar")
+    elif dollars > 1:
+        print(f"{dollars} dollars")
+
+    # Calculate quarters
+    total_cents %= 100
+    quarters = total_cents // 25
+    if quarters == 1:
+        print(f"{quarters} quarter")
+    elif quarters > 1:
+        print(f"{quarters} quarters")
+
+    # Calculate dimes
+    total_cents %= 25
+    dimes = total_cents // 10
+    if dimes == 1:
+        print(f"{dimes} dime")
+    elif dimes > 1:
+        print(f"{dimes} dimes")
+
+    # Calculate nickels
+    total_cents %= 10
+    nickels = total_cents // 5
+    if nickels == 1:
+        print(f"{nickels} nickel")
+    elif nickels > 1:
+        print(f"{nickels} nickels")
+
+    # Calculate pennies
+    pennies = total_cents % 5
+    if pennies == 1:
+        print(f"{pennies} penny")
+    elif pennies > 1:
+        print(f"{pennies} pennies")
+
+calculate_change()
