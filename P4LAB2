@@ -1,0 +1,30 @@
+# Tori Strickland
+# 07/07/2024
+# P4LAB2
+# Entering integers and displaying multiplication table for that integer
+
+def display_multiplication_table(num):
+    print(f"Multiplication table for {num} (from 1 to 12):")
+    for i in range(1, 13):
+        print(f"{num} * {i} = {num * i}")
+
+def main():
+    while True:
+        try:
+            user_input = int(input("Enter a integer: "))
+            print()
+            if user_input < 0:
+                print("This program does not handle negative numbers. Exiting program.")
+                break
+            display_multiplication_table(user_input)
+        except ValueError:
+            print("Invalid input. Please enter a valid non-negative integer.")
+        repeat = input("Do you want to run the program again? (yes/no): ").lower()
+        print()
+        if repeat != "yes":
+            print()
+            print("Exiting program...")
+            break
+
+if __name__ == "__main__":
+    main() 
